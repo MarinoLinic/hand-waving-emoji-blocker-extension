@@ -1,8 +1,8 @@
-replaceText(document.body)
+removeEmoji(document.body)
 
-function replaceText(element) {
+function removeEmoji(element) {
 	if (element.hasChildNodes()) {
-		element.childNodes.forEach(replaceText)
+		element.childNodes.forEach(removeEmoji)
 	} else if (element.nodeType === Text.TEXT_NODE) {
 		element.textContent = element.textContent.replace(/👋/gi, '')
 	}
